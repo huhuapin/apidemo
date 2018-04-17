@@ -48,7 +48,7 @@ $api->version('v1', [
     // 短信验证码
     $api->post('verificationCodes', 'VerificationCodesController@store')
         ->name('api.verificationCodes.store');
-// 用户注册
+    // 用户注册
     $api->post('users', 'UsersController@store')
         ->name('api.users.store');
     //图片验证码
@@ -57,6 +57,9 @@ $api->version('v1', [
     // 第三方登录
     $api->post('socials/{social_type}/authorizations', 'AuthorizationsController@socialStore')
         ->name('api.socials.authorizations.store');
+    // 登录
+    $api->post('authorizations', 'AuthorizationsController@store')
+        ->name('api.authorizations.store');
 });
 
 $api->version('v2', function($api) {
